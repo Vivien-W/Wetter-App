@@ -2,69 +2,7 @@
 
 Eine einfache und responsive Wetter-App, die aktuelle Wetterdaten (Temperatur, Windgeschwindigkeit, Luftfeuchtigkeit und dynamische Wetter-Icons) für Städte weltweit anzeigt.
 
-Diese Wetter-App basiert auf einem YouTube-Tutorial von "GreatStack" (https://www.youtube.com/watch?v=zs1Nq2s_uy4&t=1748s&ab_channel=GreatStack). Sie unterscheidet sich jedoch durch ein eigenständiges, responsives Design, die Nutzung der Open-Meteo API (kostenlos und ohne Registrierung nutzbar) und angepassten JavaScript-Code.
-
----
-      
-## Features
-
-* **Stadtsuche:** Suche nach Wetterdaten für Städte weltweit.
-* **Aktuelle Wetterinformationen:** Anzeige von Temperatur (🌡️), Windgeschwindigkeit (💨) und Luftfeuchtigkeit (💧).
-* **Dynamische Wetter-Icons:** Visuelle Darstellung der Wetterlage (🌤️ Sonne, Regen, Schnee, Gewitter usw.).
-* **Modernes Design:** Responsives Layout mit einem "Frosted-Glass"-Effekt (`backdrop-filter`).
-
----
-
-## Technologien
-
-* **Frontend:** React mit Vite
-* **Wetterdaten:** Open-Meteo API (Geocoding API für Koordinaten, Forecast API für Wetterdaten)
-
----
-
-## APIs genutzt
-
-Die App nutzt folgende APIs von Open-Meteo:
-
-* **🌍 Geocoding API (Koordinaten zu Stadtnamen):**
-    `https://geocoding-api.open-meteo.com/v1/search?name=Berlin`
-* **🌤️ Wetter API (Wetterdaten für Koordinaten):**
-    `https://api.open-meteo.com/v1/forecast?latitude=...&longitude=...&current_weather=true`
-
----## Installation
-
-Befolge diese Schritte, um die App lokal einzurichten und zu starten:
-
-1.  **Repository klonen:**
-    ```bash
-    git clone [https://github.com/Vivi-WB/wetter-app.git](https://github.com/Vivi-WB/wetter-app.git)
-    ```
-2.  **Ordner wechseln:**
-    ```bash
-    cd wetter-app
-    ```
-3.  **Abhängigkeiten installieren:**
-    ```bash
-    npm install
-    ```
-4.  **App starten:**
-    ```bash
-    npm run dev
-    ```
-    Die App ist dann unter `http://localhost:5173` oder einem ähnlichen Port erreichbar.
-
----
-
-## Projektstruktur (Auszug)
-
-Gerne, hier ist der überarbeitete Text im .md Format, den du direkt in deine README.md Datei kopieren kannst:
-Markdown
-
-# Wetter App – React + Open-Meteo API
-
-Eine einfache und responsive Wetter-App, die aktuelle Wetterdaten (Temperatur, Windgeschwindigkeit, Luftfeuchtigkeit und dynamische Wetter-Icons) für Städte weltweit anzeigt.
-
-Diese Wetter-App basiert auf einem YouTube-Tutorial von "GreatStack" (LINK ZUM TUTORIAL HIER). Sie unterscheidet sich jedoch durch ein eigenständiges, responsives Design, die Nutzung der Open-Meteo API (kostenlos und ohne Registrierung nutzbar) und angepassten JavaScript-Code.
+Diese Wetter-App basiert auf einem YouTube-Tutorial von "GreatStack" (https://www.youtube.com/watch?v=zs1Nq2s_uy4&t=1748s&ab_channel=GreatStack) . Sie unterscheidet sich jedoch durch ein eigenständiges, responsives Design, die Nutzung der Open-Meteo API (kostenlos und ohne Registrierung nutzbar) und angepassten JavaScript-Code.
 
 ---
 
@@ -101,7 +39,7 @@ Befolge diese Schritte, um die App lokal einzurichten und zu starten:
 
 1.  **Repository klonen:**
     ```bash
-    git clone [https://github.com/dein-nutzername/wetter-app.git](https://github.com/dein-nutzername/wetter-app.git)
+    git clone [https://github.com/dein-nutzername/Wetter-App.git](https://github.com/Vivi-WB/Wetter-App.git)
     ```
 2.  **Ordner wechseln:**
     ```bash
@@ -140,12 +78,14 @@ Die zentrale React-Komponente der App, verantwortlich für die Wetteranzeige und
     * Führt API-Aufrufe an die Geocoding- und Wetter-API durch.
     * Zeigt die aktuelle Temperatur, Windgeschwindigkeit und Luftfeuchtigkeit an.
     * Wählt dynamisch das passende Wetter-Icon basierend auf dem `weathercode`.
+
 * **Verwendete Hooks:**
     * `useState` für:
         * `city` (Benutzereingabe im Suchfeld)
         * `temperature`, `windSpeed`, `humidity` (abgerufene Wetterdaten)
         * `location` (Angezeigter Ort: Stadtname, Land)
         * `weatherIcon` (Pfad zum aktuellen Wetter-Icon)
+
 * **Interaktionen:**
     * Die Suche kann durch einen Klick auf das 🔍 Icon oder durch Drücken der Enter-Taste im Eingabefeld ausgelöst werden.
     * Enthält grundlegende Fehlerbehandlung für ungültige Städtenamen oder Netzwerkprobleme.
@@ -158,7 +98,6 @@ Diese CSS-Datei definiert die visuellen Stile der `Weather`-Komponente.
     * Implementiert den modernen Glassmorphismus-Effekt mittels `backdrop-filter`.
     * Bietet ein responsives Layout, das sich an Desktop- und mobile Bildschirmgrößen anpasst.
     * Verwendet Farbcodierung und Icon-Platzierung für eine bessere Lesbarkeit der Wetterinformationen.
-
 
 ### `assets/images/`
 
