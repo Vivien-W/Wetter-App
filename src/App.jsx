@@ -1,14 +1,13 @@
-import React from 'react'
-import './index.css';
-import Weather from './components/Wetter';
-
+import React from "react";
+import "./index.css";
+import Weather from "./components/Wetter";
 
 const App = () => {
   return (
     <div className="app">
-    <Weather/>
+      <Weather />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

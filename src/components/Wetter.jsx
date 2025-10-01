@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import './Wetter.css';
+import React, { useState } from "react";
+import "./Wetter.css";
 import icon_search from "../assets/images/icon-search.svg";
 import icon_sun from "../assets/images/icon-sun.svg";
 import icon_cloud from "../assets/images/icon-cloud.svg";
@@ -10,24 +10,23 @@ import icon_snow from "../assets/images/icon-snow.svg";
 
 // Die Open-Meteo-API liefert im Objekt current_weather auch einen "weathercode" -> Icon-Anzeige gemäß Wetterlage möglich
 const weatherIcons = {
-  0: icon_sun,          // Klar
-  1: icon_cloudsun,     // Leicht bewölkt
-  2: icon_cloud,        // Bewölkt
-  3: icon_cloud,        // Stark bewölkt
-  45: icon_cloud,       // Nebel
-  48: icon_cloud,       // Nebel mit Reif
-  51: icon_rain,        // leichter Nieselregen
-  61: icon_rain,        // leichter Regen
-  63: icon_rain,        // mäßiger Regen
-  65: icon_rain,        // starker Regen
-  66: icon_rain,        // gefrierender Regen
-  71: icon_snow,        // leichter Schnee
-  73: icon_snow,        // mäßiger Schnee
-  75: icon_snow,        // starker Schnee
-  95: icon_lightning,   // Gewitter
-  96: icon_lightning    // Gewitter mit Hagel
+  0: icon_sun, // Klar
+  1: icon_cloudsun, // Leicht bewölkt
+  2: icon_cloud, // Bewölkt
+  3: icon_cloud, // Stark bewölkt
+  45: icon_cloud, // Nebel
+  48: icon_cloud, // Nebel mit Reif
+  51: icon_rain, // leichter Nieselregen
+  61: icon_rain, // leichter Regen
+  63: icon_rain, // mäßiger Regen
+  65: icon_rain, // starker Regen
+  66: icon_rain, // gefrierender Regen
+  71: icon_snow, // leichter Schnee
+  73: icon_snow, // mäßiger Schnee
+  75: icon_snow, // starker Schnee
+  95: icon_lightning, // Gewitter
+  96: icon_lightning, // Gewitter mit Hagel
 };
-
 
 const Weather = () => {
   const [city, setCity] = useState("");
@@ -40,7 +39,9 @@ const Weather = () => {
   const handleSearch = async () => {
     try {
       // 1. Stadt -> Koordinaten
-      const geoUrl = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(city)}&count=1&language=de&format=json`;
+      const geoUrl = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(
+        city
+      )}&count=1&language=de&format=json`;
       const geoResponse = await fetch(geoUrl);
       const geoData = await geoResponse.json();
 
@@ -65,12 +66,14 @@ const Weather = () => {
 
       // 4. Luftfeuchtigkeit anhand aktueller Stunde
       const now = new Date().toISOString().slice(0, 13); // z. B. "2025-06-01T14"
-      const hourIndex = weatherData.hourly.time.findIndex(time => time.startsWith(now));
-      const humidityNow = hourIndex !== -1
-        ? weatherData.hourly.relative_humidity_2m[hourIndex]
-        : null;
+      const hourIndex = weatherData.hourly.time.findIndex((time) =>
+        time.startsWith(now)
+      );
+      const humidityNow =
+        hourIndex !== -1
+          ? weatherData.hourly.relative_humidity_2m[hourIndex]
+          : null;
       setHumidity(humidityNow);
-
     } catch (error) {
       console.error("Fehler bei der Wetterabfrage:", error);
       alert("Es ist ein Fehler aufgetreten.");
@@ -80,22 +83,23 @@ const Weather = () => {
   return (
     <div className="weather">
       <div className="search-bar">
-        <input 
-          type="text" 
-          placeholder="Suche..." 
-          value={city} 
-          onChange={(e) => setCity(e.target.value)}  /*Suche mit Lupe-Icon*/
-          onKeyDown={(e) => {                        /*Suche mit Enter-Taste*/
+        <input
+          type="text"
+          placeholder="Suche..."
+          value={city}
+          onChange={(e) => setCity(e.target.value)} /*Suche mit Lupe-Icon*/
+          onKeyDown={(e) => {
+            /*Suche mit Enter-Taste*/
             if (e.key === "Enter") {
-            handleSearch();
+              handleSearch();
             }
           }}
         />
-        <img 
-          src={icon_search} 
-          alt='icon-search' 
-          className="icon_search" 
-          onClick={handleSearch} 
+        <img
+          src={icon_search}
+          alt="icon-search"
+          className="icon_search"
+          onClick={handleSearch}
         />
       </div>
 

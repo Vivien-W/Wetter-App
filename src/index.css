@@ -1,18 +1,17 @@
 /*Font von Google-Fonts importieren*/
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
-
 }
 
 .app {
-min-height: 100vh; /*vh steht für "viewport height" und bezeichnet 1% der sichtbaren Höhe des Browserfensters. 100vh entspricht somit der gesamten Höhe des Viewports*/
-display: grid;
-background-image: url(assets/images/Background_HamburgerHafen.png); /*Image generiert mit ChatGPT*/
-background-size: cover;
-background-position: center;
+  min-height: 100vh; /*vh steht für "viewport height" und bezeichnet 1% der sichtbaren Höhe des Browserfensters. 100vh entspricht somit der gesamten Höhe des Viewports*/
+  display: grid;
+  background-image: url(assets/images/Background_HamburgerHafen.png); /*Image generiert mit ChatGPT*/
+  background-size: cover;
+  background-position: center;
 }
